@@ -1,3 +1,13 @@
+#!/bin/bash
+set -e
+
+echo "Building project..."
+
+# Example build steps
+mkdir -p dist
+echo "Build artifact" > dist/output.txt
+
+echo "Build complete."
 name: Release Pipeline
 
 on:
