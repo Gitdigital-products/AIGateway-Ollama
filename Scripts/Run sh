@@ -1,6 +1,9 @@
-# scripts/run.sh
 #!/bin/bash
 set -e
 
-echo "✅ Ollama self-test placeholder script running..."
-# Add real test logic here later
+echo "Running release script..."
+
+# Add custom release logic here
+# e.g., packaging, version stamping, etc.
+
+echo "Release script complete."
