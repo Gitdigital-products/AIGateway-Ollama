@@ -14,16 +14,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Make scripts executable
-        run: chmod +x scripts/*.sh
+        run: |
+          if [ -d "scripts" ]; then
+            chmod +x scripts/*.sh
+          else
+            echo "No scripts directory found, skipping chmod."
+          fi
 
       - name: Run Ollama stack entrypoint
         run: |
           echo "Starting Ollama self-test..."
           ./scripts/run.sh
-- name: Make scripts executable
-  run: |
-    if [ -d "scripts" ]; then
-      chmod +x scripts/*.sh
-    else
-      echo "No scripts directory found, skipping chmod."
-    fi
