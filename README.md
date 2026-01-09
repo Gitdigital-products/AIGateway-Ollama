@@ -1,35 +1,20 @@
+# AI Gateway for Ollama
+
+An OpenAI API–compatible gateway that proxies requests to a local Ollama instance.
+
+This project lets you run local LLMs via Ollama while keeping compatibility with tools and SDKs built for the OpenAI API.
 
 ---
 
+## What This Does
 
-README.md
+- Exposes OpenAI-style endpoints (`/v1/chat/completions`)
+- Forwards requests to Ollama
+- Uses API keys to select models and behavior
+- Runs locally via Docker or directly with Python
 
-This keeps future-you sane.
+If a client works with `api.openai.com`, it should work here with minimal or zero changes.
 
-# AI Gateway (Ollama)
+---
 
-This repo runs a simple AI gateway in front of Ollama.
-
-## How it works
-- Clients send requests to `/v1/chat/completions`
-- API key determines model + behavior
-- Gateway forwards request to Ollama
-
-## Run locally
-1. Copy `.env.example` → `.env`
-2. `docker compose up --build`
-3. Call API on `http://localhost:8000`
-
-## API Example
-```bash
-curl http://localhost:8000/v1/chat/completions \
-  -H "Authorization: Bearer dev-key-123" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "messages": [
-      {"role": "user", "content": "Review this function"}
-    ]
-  }'
-```
-
-# AIGateway-Ollama
+## Architecture (High Level)
