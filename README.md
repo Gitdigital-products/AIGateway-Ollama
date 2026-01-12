@@ -1,3 +1,6 @@
+![CI](https://github.com/RickCreator87/aigateway-ollama/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/github/license/RickCreator87/aigateway-ollama)
+![Stars](https://img.shields.io/github/stars/RickCreator87/aigateway-ollama)
 # AI Gateway for Ollama
 
 An OpenAI API–compatible gateway that proxies requests to a local Ollama instance.
