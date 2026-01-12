@@ -1,4 +1,6 @@
+![Last Commit](https://img.shields.io/github/last-commit/RickCreator87/aigateway-ollama)Repo Size
 
+![Repo Size](https://img.shields.io/github/repo-size/RickCreator87/aigateway-ollama)
 # AIGateway-Ollama
 
 ![CI](https://github.com/Gitdigital-products/AIGateway-Ollama/actions/workflows/ci.yml/badge.svg)
