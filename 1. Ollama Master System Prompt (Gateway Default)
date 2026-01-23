@@ -1,0 +1,250 @@
+100% Ollama-operated, designed to plug straight into AIGateway-Ollama as the execution brain. Think of Ollama as the CPU, prompts as firmware.
+
+
+---
+
+Big Picture (no fluff)
+
+Your setup becomes:
+
+Ollama → runs models locally (DeepSeek, Qwen, Code LLMs, etc.)
+
+AIGateway-Ollama → routes tasks, enforces roles, scopes prompts
+
+Your repos → source of truth
+
+Prompt system → replaces human micromanagement
+
+
+You’re basically building a local AI engineering assembly line.
+
+
+---
+
+1. Ollama Master System Prompt (Gateway Default)
+
+This should be the global system prompt baked into AIGateway-Ollama for this project.
+
+You are a local AI agent running inside Ollama.
+You operate with no internet access and no cloud dependencies.
+
+Primary role:
+Systems engineer for modular, post-quantum, nano-scale architectures.
+
+Rules:
+- Assume repositories exist locally and are authoritative
+- Never invent external APIs or services
+- Prefer minimal, auditable implementations
+- Treat cryptography, networking, and metadata as separate layers
+- Clearly mark assumptions
+- Output must be directly usable in a GitHub repository
+
+You are part of a multi-agent system coordinated by an AI gateway.
+Stay within the task scope provided.
+
+This keeps every model aligned, no matter which one you swap in.
+
+
+---
+
+2. Repo-Aware Context Injection Prompt (Gateway Feature)
+
+This is important: Ollama models don’t “see” repos unless you feed them.
+
+Your gateway should inject repo summaries like this before task prompts:
+
+Context:
+The following repositories are part of the system:
+
+1. QUANTUM-SAFE-CRYPTOGRAPHY-MICRO-MODULE
+   Responsibility: Post-quantum cryptographic primitives only
+
+2. NANO-DEVICE-NETWORK-PROTOCOL
+   Responsibility: Lightweight packet-based communication
+
+3. STEALTH-METADATA-ARCHITECTURE
+   Responsibility: Metadata protection layers
+
+4. EXECUTING-QUANTUM-SAFE-CRYPTOGRAPHY-FIRST
+   Responsibility: System orchestration
+
+All modules must remain loosely coupled.
+
+This can be auto-injected by AIGateway-Ollama per request.
+
+
+---
+
+3. Ollama Task Prompt Templates (Drop-in Ready)
+
+These are ready-to-store prompt templates in your gateway.
+
+🔐 Crypto Module Task Template
+
+Task Type: Crypto Implementation
+
+Target Repository:
+QUANTUM-SAFE-CRYPTOGRAPHY-MICRO-MODULE
+
+Constraints:
+- Language: Rust
+- Environment: Embedded / edge capable
+- Algorithms: CRYSTALS-Kyber, CRYSTALS-Dilithium
+- No networking
+- No metadata handling
+
+Deliverables:
+- Public API definitions
+- Minimal implementation
+- One usage example
+- Unit tests
+
+Output format:
+- File tree
+- Code blocks grouped by file
+- Brief explanation per file
+
+
+---
+
+📡 Nano Network Protocol Template
+
+Task Type: Network Protocol
+
+Target Repository:
+NANO-DEVICE-NETWORK-PROTOCOL
+
+Constraints:
+- Unreliable transport
+- Low power devices
+- No encryption logic
+
+Tasks:
+- Define packet structure
+- Implement serializer/deserializer
+- Simulated transport test
+
+Output:
+- Protocol spec
+- Code
+- Test example
+
+
+---
+
+🕶️ Stealth Metadata Template
+
+Task Type: Metadata Protection
+
+Target Repository:
+STEALTH-METADATA-ARCHITECTURE
+
+Goal:
+Reduce metadata leakage without cryptographic changes.
+
+Allowed:
+- Padding
+- Constant frame sizes
+- Timing normalization
+
+Deliverables:
+- Threat model
+- Wrapper format
+- Implementation
+- Example integration
+
+Restrictions:
+- No crypto invention
+- Must be optional
+
+
+---
+
+🧠 Orchestration / System Glue Template
+
+Task Type: System Orchestration
+
+Target Repository:
+EXECUTING-QUANTUM-SAFE-CRYPTOGRAPHY-FIRST
+
+Goal:
+Coordinate all modules into an end-to-end system.
+
+Tasks:
+- Startup flow
+- Key lifecycle
+- Session management
+- Simulated multi-device run
+
+Output:
+- ASCII system diagram
+- Orchestrator code
+- Example logs
+
+
+---
+
+4. Ollama Model Routing Strategy (Important)
+
+Inside AIGateway-Ollama, you want role-based routing, not “one model does all”.
+
+Example mapping:
+
+deepseek-coder → implementation tasks
+
+qwen2.5 → protocol specs & threat models
+
+llama3 → orchestration logic & reviews
+
+
+Gateway logic (conceptually):
+
+if task_type == "Crypto Implementation":
+    model = deepseek-coder
+elif task_type == "Threat Model":
+    model = qwen2.5
+elif task_type == "Orchestration":
+    model = llama3
+
+This avoids the classic LLM failure mode: smart model, wrong job.
+
+
+---
+
+5. Self-Audit Prompt (Critical for Local Models)
+
+Local models will hallucinate confidently. This fixes that.
+
+You are performing a feasibility and security audit.
+
+Review the previous output and identify:
+- Unrealistic assumptions
+- Hardware constraints violations
+- Security weaknesses
+- Overengineering
+
+Provide only actionable corrections.
+Do not add new features.
+
+Run this automatically after each generation.
+
+
+---
+
+6. Why This Works (real talk)
+
+You’re basically turning Ollama into a deterministic engineering tool, not a chat toy.
+
+No cloud = no data leaks
+
+Prompt templates = consistency
+
+Gateway = control plane
+
+Modular repos = real architecture
+
+
+This is how you scale thinking without losing coherence.
+
+
+---
